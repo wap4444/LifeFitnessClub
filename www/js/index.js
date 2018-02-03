@@ -47,10 +47,10 @@ var ref = cordova.InAppBrowser.open('http://fit.vezuedu.kz/app/?push='+localStor
 });
         
 function didReceiveRemoteNotificationCallBack(jsonData) {
+	alert(jsonData.payload.additionalData.ssylka);
 }
 function didOpenRemoteNotificationCallBack(jsonData) {
-var link = JSON.parse ( jsonData );
-alert(link);
+alert(jsonData.payload.additionalData.ssylka);
 }
         //Настройка ПУШЕЙ ДЛЯ АЙФОНА
         var iosSettings = {};
