@@ -50,7 +50,7 @@ function didReceiveRemoteNotificationCallBack(jsonData) {
 	alert(jsonData.payload.additionalData.ssylka);
 }
 function didOpenRemoteNotificationCallBack(jsonData) {
-alert(jsonData.payload.additionalData.ssylka);
+alert(jsonData.notification.payload.additionalData.ssylka);
 }
         //Настройка ПУШЕЙ ДЛЯ АЙФОНА
         var iosSettings = {};
