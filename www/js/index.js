@@ -55,7 +55,7 @@ function didOpenRemoteNotificationCallBack(jsonData) {}
 
         //ПОДКЛЮЧЕНИЕ ПУШЕЙ 
            window.plugins.OneSignal
-          .startInit("3fc2f01b-b67f-48a5-87bc-bfd1df368503")
+          .startInit("4f501c05-30c6-4625-b6e9-afa512933b15")
           .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
           .handleNotificationOpened(didOpenRemoteNotificationCallBack)
 		  .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
