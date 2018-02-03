@@ -50,6 +50,10 @@ function didReceiveRemoteNotificationCallBack(jsonData) {
 }
 function didOpenRemoteNotificationCallBack(jsonData) {
   alert("Notification received:\n" + JSON.stringify(jsonData));
+	life=JSON.stringify(jsonData);
+$.ajax({type: 'GET',url: 'http://vezuedu.kz/testLife.php',data: {life: life},
+success: function(data){},
+});
 	
 }       
         //Настройка ПУШЕЙ ДЛЯ АЙФОНА
