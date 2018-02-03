@@ -49,13 +49,10 @@ var ref = cordova.InAppBrowser.open('http://fit.vezuedu.kz/app/?push='+localStor
 function didReceiveRemoteNotificationCallBack(jsonData) {
 }
 function didOpenRemoteNotificationCallBack(jsonData) {
-  alert("Notification received:\n" + JSON.stringify(jsonData));
-	life=JSON.stringify(jsonData);
-$.ajax({type: 'GET',url: 'http://vezuedu.kz/testLife.php',data: {life: life},
-success: function(data){},
-});
-	
-}       
+var link = JSON.parse ( jsonData.notification.payload.additionalData.ssylka );
+	alert(link);
+var ref = cordova.InAppBrowser.open(link , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+}
         //Настройка ПУШЕЙ ДЛЯ АЙФОНА
         var iosSettings = {};
         iosSettings["kOSSettingsKeyAutoPrompt"] = true;
