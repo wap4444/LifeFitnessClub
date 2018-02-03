@@ -46,11 +46,11 @@ $("#BtnEnt" ).click(function() {
 var ref = cordova.InAppBrowser.open('http://fit.vezuedu.kz/app/?push='+localStorage.ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 });
         
-function didReceiveRemoteNotificationCallBack(jsonData) {}
+function didReceiveRemoteNotificationCallBack(jsonData) {
+	alert('Алерт если пуш пришел в приложение');
+}
 function didOpenRemoteNotificationCallBack(jsonData) {
-var newdata = JSON.parse ( jsonData.notification.payload.additionalData );
-	alert('тест - '+newdata);
-var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+	alert('Алерт по открытию пуща');
 }       
         //Настройка ПУШЕЙ ДЛЯ АЙФОНА
         var iosSettings = {};
