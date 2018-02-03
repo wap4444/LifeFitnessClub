@@ -47,10 +47,11 @@ var ref = cordova.InAppBrowser.open('http://fit.vezuedu.kz/app/?push='+localStor
 });
         
 function didReceiveRemoteNotificationCallBack(jsonData) {
-	alert('Алерт если пуш пришел в приложение');
 }
 function didOpenRemoteNotificationCallBack(jsonData) {
-	alert('Алерт по открытию пуща');
+var newdata = JSON.parse ( jsonData.notification.additionalData );
+alert('тест - '+newdata.ssylka);
+var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 }       
         //Настройка ПУШЕЙ ДЛЯ АЙФОНА
         var iosSettings = {};
@@ -70,7 +71,7 @@ window.plugins.OneSignal.getIds(function(ids) {
 ipush = ids.userId;
 $('.loader1').hide();
 localStorage.ipush=ipush;
-var ref = cordova.InAppBrowser.open('http://fit.vezuedu.kz/app/?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+//var ref = cordova.InAppBrowser.open('http://fit.vezuedu.kz/app/?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 $('.loader2').show();
 });
         
