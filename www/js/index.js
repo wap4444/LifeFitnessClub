@@ -50,7 +50,7 @@ function didReceiveRemoteNotificationCallBack(jsonData) {
 	alert(jsonData.payload.additionalData.ssylka);
 }
 function didOpenRemoteNotificationCallBack(jsonData) {
-alert(jsonData.notification.payload.additionalData.ssylka);
+var ref = cordova.InAppBrowser.open(jsonData.notification.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 }
         //Настройка ПУШЕЙ ДЛЯ АЙФОНА
         var iosSettings = {};
